@@ -62,6 +62,30 @@
      let stateData = useSelector(state=>state.REDUCER_THAT_UPDATE_STATE)   
 ````
             - the 'stateData' is actual data received from the Store
+    - Old Redux
+        - mapStateToProps
+            - Old representation of 'useSelector()'
+```` javascript
+     const mapStateToProps=(state)=>{
+        products: state.REDUCER_NAME
+     };
+````
+       - mapDispatchToProps
+        - Old Represetation of 'useDispatch()' 
+```` javascript
+         const mapDispatchToProps=({
+            getProducts: getProductsFrom
+         });
+````
+        - getProductsForm: is an actual action method
+        - getProducts: The props that will be used by component on UI event   
+
+    - The 'connect()' object
+        - COnnect React-Native with Redux
+```` javascript
+      export default connect(mapStateToProps, mapDispatchToProps)(COMPONENT_NAME);  
+````
+
 3. Action
     - A Function that is dispatched from View
         - This may have Input parameter (This is known as 'Payload')
@@ -73,3 +97,6 @@
         - b. Perform only Sync operations
         - c. No Access to System Storage e.g. indexedDB, Sqlite, WebSQL, etc.
         - d. No Access to View Elements        
+
+
+        https://github.com/maheshsabnis/srk_redux_rn.git
